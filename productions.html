@@ -1,20 +1,8 @@
 <!DOCTYPE html>
 <!--
-  ╔══════════════════════════════════════════════════════════════╗
-  ║  PHAROS THEATER — productions.html                          ║
-  ║                                                              ║
-  ║  HOW TO ADD A SHOW:                                          ║
-  ║  1. Copy one of the show-card blocks below                   ║
-  ║  2. Update the genre, title, dates, description             ║
-  ║  3. Add your thumbnail: images/showname-thumb.jpg           ║
-  ║  4. Add lightbox photos to the data-photos attribute as a   ║
-  ║     comma-separated list:                                    ║
-  ║     data-photos="images/show-1.jpg,images/show-2.jpg"       ║
-  ║                                                              ║
-  ║  PHOTO SIZES:                                                ║
-  ║  Thumbnails: 800×500px landscape                            ║
-  ║  Lightbox:   any size works, landscape recommended          ║
-  ╚══════════════════════════════════════════════════════════════╝
+  PHAROS THEATER — productions.html
+  HOW TO ADD A SHOW: copy a show-card block, update the text and data-photos attribute
+  PHOTOS: comma-separated list of image paths in data-photos, no spaces
 -->
 <html lang="en">
 <head>
@@ -35,7 +23,7 @@
       --gold:       #b79a5f;
       --gold-light: #cdb882;
       --white:      #fdfaf3;
-      --text-muted: #4d6e59;
+      --text-muted: #1a3b29;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -45,18 +33,19 @@
       color: var(--green);
       font-family: 'Lato', sans-serif;
       font-weight: 300;
-      line-height: 1.7;
+      line-height: 1.8;
+      font-size: 18px;
     }
 
     /* ── UTILITIES ── */
     .gold-rule { width: 56px; height: 2px; background: var(--gold); margin: 0 auto 2.5rem; }
     .section-label {
-      font-family: 'Cinzel', serif; font-size: 0.6rem;
+      font-family: 'Cinzel', serif; font-size: 0.75rem;
       letter-spacing: 0.45em; color: var(--gold); text-align: center; margin-bottom: 0.6rem;
     }
     .section-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 300;
+      font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 300;
       text-align: center; color: var(--green); margin-bottom: 0.8rem; line-height: 1.1;
     }
     .section-title em { font-style: italic; color: var(--gold); }
@@ -71,70 +60,58 @@
       border-bottom: 1px solid var(--gold);
     }
     .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
-    .nav-logo img { height: 40px; width: auto; display: block; }
+    .nav-logo img { height: 44px; width: auto; display: block; }
     .nav-logo-text {
-      font-family: 'Cinzel', serif; font-size: 0.95rem;
+      font-family: 'Cinzel', serif; font-size: 1.05rem;
       letter-spacing: 0.2em; color: var(--green); font-weight: 600;
     }
     .nav-links { display: flex; gap: 2.2rem; list-style: none; }
     .nav-links a {
-      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      font-family: 'Cinzel', serif; font-size: 0.75rem;
       letter-spacing: 0.2em; color: var(--green); text-decoration: none;
       opacity: 0.75; transition: opacity 0.2s, color 0.2s;
     }
     .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--gold); }
     .btn-tickets {
-      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      font-family: 'Cinzel', serif; font-size: 0.75rem;
       letter-spacing: 0.18em; color: var(--white); background: var(--green);
-      padding: 0.6rem 1.5rem; text-decoration: none; transition: background 0.2s;
+      padding: 0.65rem 1.6rem; text-decoration: none; transition: background 0.2s;
     }
     .btn-tickets:hover { background: var(--green-mid); }
 
     /* ── PAGE HEADER ── */
     .page-header {
-      padding: 10rem 2rem 5rem;
-      text-align: center;
-      background: var(--sand);
-      position: relative;
+      padding: 10rem 2rem 5rem; text-align: center;
+      background: var(--sand); position: relative;
     }
     .page-header::before {
       content: ''; position: absolute; inset: 0;
       background: radial-gradient(ellipse 60% 80% at 50% 100%, rgba(183,154,95,0.12) 0%, transparent 70%);
       pointer-events: none;
     }
-    .page-header .section-label { margin-bottom: 0.6rem; }
-    .page-header .section-title { margin-bottom: 0.8rem; }
     .page-header p {
-      font-size: 1rem; color: var(--text-muted);
+      font-size: 1.1rem; color: var(--green);
       max-width: 520px; margin: 0 auto; line-height: 1.8;
     }
 
     /* ── PRODUCTIONS GRID ── */
-    .productions-section {
-      padding: 4rem 2rem 7rem;
-      background: var(--white);
-    }
+    .productions-section { padding: 4rem 2rem 7rem; background: var(--white); }
     .productions-grid {
       max-width: 1160px; margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
       gap: 2rem;
     }
 
     /* ── SHOW CARD ── */
     .show-card {
-      background: var(--sand-light);
-      border: 1px solid rgba(183,154,95,0.35);
-      overflow: hidden;
-      cursor: pointer;
+      background: var(--sand-light); border: 1px solid rgba(183,154,95,0.35);
+      overflow: hidden; cursor: pointer; position: relative;
       transition: transform 0.22s, box-shadow 0.22s;
-      position: relative;
     }
     .show-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 14px 40px rgba(26,59,41,0.14);
     }
-    /* Hover overlay */
     .show-card-overlay {
       position: absolute; inset: 0;
       background: rgba(26,59,41,0.55);
@@ -143,28 +120,25 @@
     }
     .show-card:hover .show-card-overlay { opacity: 1; }
     .overlay-text {
-      font-family: 'Cinzel', serif; font-size: 0.7rem;
+      font-family: 'Cinzel', serif; font-size: 0.78rem;
       letter-spacing: 0.3em; color: var(--sand);
-      border: 1px solid var(--gold); padding: 0.6rem 1.4rem;
+      border: 1px solid var(--gold); padding: 0.65rem 1.5rem;
     }
-
-    /* Thumbnail image */
     .show-thumb {
       width: 100%; aspect-ratio: 16 / 10;
-      object-fit: cover; display: block;
-      background: var(--sand-dark);
+      object-fit: cover; display: block; background: var(--sand-dark);
     }
     .show-info { padding: 1.6rem 1.8rem 2rem; }
     .show-genre-tag {
-      font-family: 'Cinzel', serif; font-size: 0.55rem;
+      font-family: 'Cinzel', serif; font-size: 0.65rem;
       letter-spacing: 0.3em; color: var(--gold); margin-bottom: 0.5rem;
     }
     .show-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.65rem; font-weight: 600;
+      font-size: 1.8rem; font-weight: 600;
       color: var(--green); line-height: 1.15; margin-bottom: 0.3rem;
     }
-    .show-dates-small { font-size: 0.82rem; color: var(--text-muted); }
+    .show-dates-small { font-size: 0.9rem; color: var(--green); }
 
     /* ── LIGHTBOX ── */
     .lightbox {
@@ -172,68 +146,54 @@
       background: rgba(13,13,11,0.93);
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
-      padding: 2rem;
-      opacity: 0; pointer-events: none;
+      padding: 2rem; opacity: 0; pointer-events: none;
       transition: opacity 0.3s;
     }
     .lightbox.open { opacity: 1; pointer-events: all; }
-
     .lightbox-close {
       position: absolute; top: 1.5rem; right: 2rem;
-      font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.3em;
+      font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.3em;
       color: rgba(229,206,156,0.7); background: none; border: none;
       cursor: pointer; transition: color 0.2s;
     }
     .lightbox-close:hover { color: var(--gold-light); }
-
     .lightbox-inner {
       max-width: 900px; width: 100%;
       display: flex; flex-direction: column; align-items: center; gap: 1.5rem;
     }
-
-    /* Show info inside lightbox */
     .lightbox-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 300; font-style: italic;
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; font-style: italic;
       color: var(--sand-light); text-align: center; line-height: 1.1;
     }
     .lightbox-meta {
-      font-family: 'Cinzel', serif; font-size: 0.6rem;
+      font-family: 'Cinzel', serif; font-size: 0.7rem;
       letter-spacing: 0.35em; color: var(--gold); text-align: center;
     }
     .lightbox-desc {
-      font-size: 0.95rem; color: rgba(229,206,156,0.7);
-      text-align: center; max-width: 600px; line-height: 1.75;
+      font-size: 1rem; color: rgba(229,206,156,0.8);
+      text-align: center; max-width: 600px; line-height: 1.8;
     }
-
-    /* Photo area */
-    .lightbox-photo-wrap {
-      position: relative; width: 100%;
-    }
+    .lightbox-photo-wrap { position: relative; width: 100%; }
     .lightbox-photo {
       width: 100%; max-height: 55vh;
       object-fit: contain; display: block;
       border: 1px solid rgba(183,154,95,0.2);
     }
-
-    /* Prev / Next arrows */
     .lightbox-prev,
     .lightbox-next {
       position: absolute; top: 50%; transform: translateY(-50%);
       background: rgba(26,59,41,0.75); border: 1px solid var(--gold);
-      color: var(--sand); width: 44px; height: 44px;
+      color: var(--sand); width: 48px; height: 48px;
       display: flex; align-items: center; justify-content: center;
-      cursor: pointer; font-size: 1.1rem;
-      transition: background 0.2s;
-      user-select: none;
+      cursor: pointer; font-size: 1.2rem;
+      transition: background 0.2s; user-select: none;
     }
-    .lightbox-prev { left: -22px; }
-    .lightbox-next { right: -22px; }
+    .lightbox-prev { left: -24px; }
+    .lightbox-next { right: -24px; }
     .lightbox-prev:hover, .lightbox-next:hover { background: var(--green); }
-
-    /* Photo counter */
     .lightbox-counter {
-      font-family: 'Cinzel', serif; font-size: 0.55rem;
+      font-family: 'Cinzel', serif; font-size: 0.65rem;
       letter-spacing: 0.3em; color: rgba(229,206,156,0.45);
     }
 
@@ -243,7 +203,7 @@
       text-align: center; border-top: 2px solid var(--gold);
     }
     .footer-tagline {
-      font-family: 'Cormorant Garamond', serif; font-size: 1rem;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;
       font-style: italic; font-weight: 300;
       color: rgba(229,206,156,0.65); margin-bottom: 1rem;
     }
@@ -252,11 +212,11 @@
       flex-wrap: wrap; list-style: none; margin-bottom: 1.5rem;
     }
     .footer-links a {
-      font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.2em;
+      font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.2em;
       color: rgba(229,206,156,0.55); text-decoration: none; transition: color 0.2s;
     }
     .footer-links a:hover { color: var(--gold-light); }
-    .footer-copy { font-size: 0.75rem; color: rgba(229,206,156,0.3); }
+    .footer-copy { font-size: 0.85rem; color: rgba(229,206,156,0.3); }
 
     /* ── MOBILE ── */
     @media (max-width: 720px) {
@@ -285,7 +245,6 @@
   <a class="btn-tickets" href="https://pickenstheater.com" target="_blank" rel="noopener">GET TICKETS</a>
 </nav>
 
-
 <!-- PAGE HEADER -->
 <div class="page-header">
   <p class="section-label">On Our Stage</p>
@@ -294,85 +253,48 @@
   <p>A look back at the shows that have graced our stage. Click any production to see photos.</p>
 </div>
 
-
 <!-- PRODUCTIONS GRID -->
 <div class="productions-section">
   <div class="productions-grid">
 
-    <!--
-    ╔═══════════════════════════════════════════════════════╗
-    ║  HOW TO ADD A SHOW                                    ║
-    ║                                                       ║
-    ║  1. Copy this entire show-card block                  ║
-    ║  2. Update genre, title, dates, description           ║
-    ║  3. Update show-thumb src with your thumbnail image   ║
-    ║  4. Update data-photos with a comma-separated list    ║
-    ║     of your lightbox photo paths — no spaces          ║
-    ║     e.g. data-photos="images/s1.jpg,images/s2.jpg"   ║
-    ╚═══════════════════════════════════════════════════════╝
-    -->
-
-    <!-- SHOW 1 -->
+    <!-- SHOW 1 — Murder by the Book -->
     <div class="show-card"
-         data-title="Show Title"
+         data-title="Murder by the Book"
          data-dates="October 9–11, 2024"
-         data-genre="Mystery / Drama"
-         data-description="A short description of the show — what it was about, what made it special, how the audience responded. Two or three sentences."
-         data-photos="images/show1-photo1.jpg,images/show1-photo2.jpg,images/show1-photo3.jpg">
-      <!--
-        THUMBNAIL: replace src with your image, e.g. images/show1-thumb.jpg
-        Recommended size: 800×500px
-      -->
-      <img class="show-thumb" src="images/show1-thumb.jpg" alt="Show 1 thumbnail" />
+         data-genre="Mystery / Comedy"
+         data-description="Description of Murder by the Book goes here."
+         data-photos="images/show1-photo1.JPG,images/show1-photo2.JPG,images/show1-photo3.JPG">
+      <img class="show-thumb" src="images/show1-thumb.JPG" alt="Murder by the Book" />
       <div class="show-card-overlay">
         <span class="overlay-text">VIEW PHOTOS</span>
       </div>
       <div class="show-info">
-        <p class="show-genre-tag">MYSTERY / DRAMA</p>
-        <p class="show-name">Show Title</p>
+        <p class="show-genre-tag">MYSTERY / COMEDY</p>
+        <p class="show-name">Murder by the Book</p>
         <p class="show-dates-small">October 9–11, 2024</p>
       </div>
     </div>
 
-    <!-- SHOW 2 — duplicate and fill in as your history grows -->
+    <!-- SHOW 2 — The Lion, The Witch, and The Wardrobe -->
     <div class="show-card"
-         data-title="Show Title"
+         data-title="The Lion, The Witch, and The Wardrobe"
          data-dates="Dates"
-         data-genre="Genre"
-         data-description="Description of this production."
-         data-photos="images/show2-photo1.jpg,images/show2-photo2.jpg">
-      <img class="show-thumb" src="images/show2-thumb.jpg" alt="Show 2 thumbnail" />
+         data-genre="Children's Classic"
+         data-description="Description of The Lion, The Witch, and The Wardrobe goes here."
+         data-photos="images/show2-photo1.JPG,images/show2-photo2.JPG,images/show2-photo3.JPG">
+      <img class="show-thumb" src="images/show2-thumb.JPG" alt="The Lion, The Witch, and The Wardrobe" />
       <div class="show-card-overlay">
         <span class="overlay-text">VIEW PHOTOS</span>
       </div>
       <div class="show-info">
-        <p class="show-genre-tag">GENRE</p>
-        <p class="show-name">Show Title</p>
-        <p class="show-dates-small">Dates</p>
-      </div>
-    </div>
-
-    <!-- SHOW 3 -->
-    <div class="show-card"
-         data-title="Show Title"
-         data-dates="Dates"
-         data-genre="Genre"
-         data-description="Description of this production."
-         data-photos="images/show3-photo1.jpg,images/show3-photo2.jpg">
-      <img class="show-thumb" src="images/show3-thumb.jpg" alt="Show 3 thumbnail" />
-      <div class="show-card-overlay">
-        <span class="overlay-text">VIEW PHOTOS</span>
-      </div>
-      <div class="show-info">
-        <p class="show-genre-tag">GENRE</p>
-        <p class="show-name">Show Title</p>
+        <p class="show-genre-tag">CHILDREN'S CLASSIC</p>
+        <p class="show-name">The Lion, The Witch, and The Wardrobe</p>
         <p class="show-dates-small">Dates</p>
       </div>
     </div>
 
   </div>
 </div>
-
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
@@ -390,7 +312,6 @@
   </div>
 </div>
 
-
 <!-- FOOTER -->
 <footer>
   <p class="footer-tagline">Letting our light shine — Liberty, SC</p>
@@ -405,9 +326,7 @@
   <p class="footer-copy">© 2025 Pharos Theater · pharostheater.org</p>
 </footer>
 
-
 <script>
-  // ── LIGHTBOX LOGIC ──
   const lightbox  = document.getElementById('lightbox');
   const lbPhoto   = document.getElementById('lb-photo');
   const lbTitle   = document.getElementById('lb-title');
@@ -418,8 +337,7 @@
   const lbNext    = document.getElementById('lb-next');
   const lbClose   = document.getElementById('lightbox-close');
 
-  let photos  = [];
-  let current = 0;
+  let photos = [], current = 0;
 
   function showPhoto(index) {
     current = (index + photos.length) % photos.length;
@@ -431,8 +349,8 @@
 
   function openLightbox(card) {
     photos  = card.dataset.photos.split(',').map(s => s.trim()).filter(Boolean);
-    lbTitle.textContent = card.dataset.title   || '';
-    lbMeta.textContent  = (card.dataset.genre  || '') + (card.dataset.dates ? '  ·  ' + card.dataset.dates : '');
+    lbTitle.textContent = card.dataset.title || '';
+    lbMeta.textContent  = (card.dataset.genre || '') + (card.dataset.dates ? '  ·  ' + card.dataset.dates : '');
     lbDesc.textContent  = card.dataset.description || '';
     showPhoto(0);
     lightbox.classList.add('open');
@@ -445,24 +363,14 @@
     lbPhoto.src = '';
   }
 
-  // Open on card click
   document.querySelectorAll('.show-card').forEach(card => {
     card.addEventListener('click', () => openLightbox(card));
   });
 
-  // Prev / Next
   lbPrev.addEventListener('click', (e) => { e.stopPropagation(); showPhoto(current - 1); });
   lbNext.addEventListener('click', (e) => { e.stopPropagation(); showPhoto(current + 1); });
-
-  // Close button
   lbClose.addEventListener('click', closeLightbox);
-
-  // Click outside photo to close
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
-
-  // Keyboard navigation
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
   document.addEventListener('keydown', (e) => {
     if (!lightbox.classList.contains('open')) return;
     if (e.key === 'ArrowLeft')  showPhoto(current - 1);
