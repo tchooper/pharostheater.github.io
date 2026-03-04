@@ -1,32 +1,26 @@
 <!DOCTYPE html>
 <!--
   ╔══════════════════════════════════════════════════════════════╗
-  ║  PHAROS THEATER — pharostheater.org                         ║
+  ║  PHAROS THEATER — index.html (Homepage)                     ║
   ║                                                              ║
-  ║  LOGO SETUP:                                                 ║
-  ║  Create an "images/" folder next to this file.              ║
-  ║  Drop your logo in as "pharos-logo.png"                     ║
-  ║  (transparent background works best on the sandy bg).       ║
-  ║  Two spots use it: nav (.nav-logo img) and hero (.hero-logo) ║
+  ║  LOGO: create an images/ folder next to this file and add   ║
+  ║  pharos-logo.png (transparent background recommended)       ║
   ║                                                              ║
-  ║  PAST SHOW PHOTOS:                                           ║
-  ║  Add photos to images/ and update the src on each           ║
-  ║  .show-photo img. Recommended: 800x500px landscape.         ║
+  ║  UPCOMING SHOW: search "PLACEHOLDER" to find the 4 spots    ║
   ║                                                              ║
-  ║  UPCOMING SHOW:                                              ║
-  ║  Search "PLACEHOLDER" to find every spot to fill in.        ║
-  ║                                                              ║
-  ║  GITHUB PAGES + CUSTOM DOMAIN (pharostheater.org):          ║
-  ║  1. Push this folder to a GitHub repo                        ║
-  ║  2. Repo Settings → Pages → deploy from main branch         ║
-  ║  3. In Pages settings enter custom domain: pharostheater.org ║
-  ║  4. In Squarespace DNS, add these records:                   ║
+  ║  GITHUB + CUSTOM DOMAIN (pharostheater.org):                ║
+  ║  1. Create a new repo just for Pharos (separate from your   ║
+  ║     personal site repo)                                      ║
+  ║  2. Push this folder to that repo                            ║
+  ║  3. Repo Settings → Pages → deploy from main branch         ║
+  ║  4. In Pages settings enter: pharostheater.org               ║
+  ║  5. In Squarespace DNS settings add:                         ║
   ║       A     @    185.199.108.153                            ║
   ║       A     @    185.199.109.153                            ║
   ║       A     @    185.199.110.153                            ║
   ║       A     @    185.199.111.153                            ║
   ║       CNAME www  yourgithubusername.github.io               ║
-  ║  5. Back in GitHub Pages, tick "Enforce HTTPS"              ║
+  ║  6. Back in GitHub Pages tick "Enforce HTTPS"               ║
   ╚══════════════════════════════════════════════════════════════╝
 -->
 <html lang="en">
@@ -40,15 +34,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --sand:        #e5ce9c;
-      --sand-dark:   #d4b97a;
-      --sand-light:  #f0e3bb;
-      --green:       #1a3b29;
-      --green-mid:   #254d36;
-      --gold:        #b79a5f;
-      --gold-light:  #cdb882;
-      --white:       #fdfaf3;
-      --text-muted:  #4d6e59;
+      --sand:       #e5ce9c;
+      --sand-dark:  #d4b97a;
+      --sand-light: #f0e3bb;
+      --green:      #1a3b29;
+      --green-mid:  #254d36;
+      --gold:       #b79a5f;
+      --gold-light: #cdb882;
+      --white:      #fdfaf3;
+      --text-muted: #4d6e59;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -62,27 +56,17 @@
     }
 
     /* ── UTILITIES ── */
-    .gold-rule {
-      width: 56px; height: 2px;
-      background: var(--gold);
-      margin: 0 auto 2.5rem;
-    }
+    .gold-rule { width: 56px; height: 2px; background: var(--gold); margin: 0 auto 2.5rem; }
     .section-label {
       font-family: 'Cinzel', serif;
-      font-size: 0.6rem;
-      letter-spacing: 0.45em;
-      color: var(--gold);
-      text-align: center;
-      margin-bottom: 0.6rem;
+      font-size: 0.6rem; letter-spacing: 0.45em;
+      color: var(--gold); text-align: center; margin-bottom: 0.6rem;
     }
     .section-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2rem, 4.5vw, 3.2rem);
-      font-weight: 300;
-      text-align: center;
-      color: var(--green);
-      margin-bottom: 0.8rem;
-      line-height: 1.1;
+      font-weight: 300; text-align: center;
+      color: var(--green); margin-bottom: 0.8rem; line-height: 1.1;
     }
     .section-title em { font-style: italic; color: var(--gold); }
     section { padding: 6rem 2rem; }
@@ -93,133 +77,79 @@
 
     /* ── NAV ── */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
       padding: 0.9rem 3.5rem;
       background: rgba(229,206,156,0.96);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--gold);
     }
     .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
+      display: flex; align-items: center; gap: 0.75rem; text-decoration: none;
     }
-    /* NAV LOGO — update src to images/pharos-logo.png */
-    .nav-logo img {
-      height: 40px;
-      width: auto;
-      display: block;
-    }
+    .nav-logo img { height: 40px; width: auto; display: block; }
     .nav-logo-text {
-      font-family: 'Cinzel', serif;
-      font-size: 0.95rem;
-      letter-spacing: 0.2em;
-      color: var(--green);
-      font-weight: 600;
+      font-family: 'Cinzel', serif; font-size: 0.95rem;
+      letter-spacing: 0.2em; color: var(--green); font-weight: 600;
     }
     .nav-links { display: flex; gap: 2.2rem; list-style: none; }
     .nav-links a {
-      font-family: 'Cinzel', serif;
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      color: var(--green);
-      text-decoration: none;
-      opacity: 0.75;
-      transition: opacity 0.2s, color 0.2s;
+      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      letter-spacing: 0.2em; color: var(--green); text-decoration: none;
+      opacity: 0.75; transition: opacity 0.2s, color 0.2s;
     }
-    .nav-links a:hover { opacity: 1; color: var(--gold); }
+    .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--gold); }
     .btn-tickets {
-      font-family: 'Cinzel', serif;
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
-      color: var(--white);
-      background: var(--green);
-      padding: 0.6rem 1.5rem;
-      text-decoration: none;
-      transition: background 0.2s;
-      display: inline-block;
+      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      letter-spacing: 0.18em; color: var(--white); background: var(--green);
+      padding: 0.6rem 1.5rem; text-decoration: none; transition: background 0.2s;
     }
     .btn-tickets:hover { background: var(--green-mid); }
 
     /* ── HERO ── */
     #hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 9rem 2rem 5rem;
-      background: var(--sand);
-      position: relative;
+      min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 9rem 2rem 5rem;
+      background: var(--sand); position: relative;
     }
     #hero::before {
-      content: '';
-      position: absolute; inset: 0;
+      content: ''; position: absolute; inset: 0;
       background: radial-gradient(ellipse 65% 55% at 50% 40%, rgba(183,154,95,0.15) 0%, transparent 70%);
       pointer-events: none;
     }
-    /* HERO LOGO — update src to images/pharos-logo.png */
     .hero-logo {
-      width: 260px;
-      max-width: 80vw;
-      height: auto;
+      width: 280px; max-width: 80vw; height: auto;
       margin-bottom: 2rem;
-      opacity: 0;
-      animation: fadeUp 0.9s ease forwards;
+      opacity: 0; animation: fadeUp 0.9s ease forwards;
     }
     .hero-tagline {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(1.8rem, 4vw, 3rem);
-      font-weight: 300;
-      font-style: italic;
-      color: var(--green);
+      font-weight: 300; font-style: italic; color: var(--green);
       margin-bottom: 0.6rem;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.25s forwards;
+      opacity: 0; animation: fadeUp 0.9s 0.25s forwards;
     }
     .hero-location {
-      font-family: 'Cinzel', serif;
-      font-size: 0.65rem;
-      letter-spacing: 0.4em;
-      color: var(--gold);
-      margin-bottom: 2.5rem;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.45s forwards;
+      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      letter-spacing: 0.4em; color: var(--gold); margin-bottom: 2.5rem;
+      opacity: 0; animation: fadeUp 0.9s 0.45s forwards;
     }
     .hero-btns {
       display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
       opacity: 0; animation: fadeUp 0.9s 0.6s forwards;
     }
     .btn-primary {
-      font-family: 'Cinzel', serif;
-      font-size: 0.68rem;
-      letter-spacing: 0.18em;
-      color: var(--white);
-      background: var(--green);
-      padding: 0.85rem 2.2rem;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
-      display: inline-block;
+      font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.18em;
+      color: var(--white); background: var(--green); padding: 0.85rem 2.2rem;
+      text-decoration: none; transition: background 0.2s, transform 0.15s; display: inline-block;
     }
     .btn-primary:hover { background: var(--green-mid); transform: translateY(-2px); }
     .btn-outline {
-      font-family: 'Cinzel', serif;
-      font-size: 0.68rem;
-      letter-spacing: 0.18em;
-      color: var(--green);
-      background: transparent;
-      border: 1.5px solid var(--green);
-      padding: 0.85rem 2.2rem;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
-      display: inline-block;
+      font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.18em;
+      color: var(--green); background: transparent; border: 1.5px solid var(--green);
+      padding: 0.85rem 2.2rem; text-decoration: none;
+      transition: background 0.2s, transform 0.15s; display: inline-block;
     }
     .btn-outline:hover { background: rgba(26,59,41,0.08); transform: translateY(-2px); }
     .hero-scroll {
@@ -236,98 +166,52 @@
       background: linear-gradient(to bottom, var(--gold), transparent);
       animation: pulse 2s infinite;
     }
+
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(22px); }
       to   { opacity: 1; transform: translateY(0); }
     }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes pulse { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
+    @keyframes pulse  { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
 
     /* ── UPCOMING SHOW ── */
     #upcoming { background: var(--white); }
     .upcoming-card {
-      max-width: 780px;
-      margin: 0 auto;
-      background: var(--sand-light);
-      border: 1px solid var(--gold);
-      padding: 3.5rem;
-      text-align: center;
+      max-width: 780px; margin: 0 auto;
+      background: var(--sand-light); border: 1px solid var(--gold);
+      padding: 3.5rem; text-align: center;
     }
     .upcoming-season {
-      font-family: 'Cinzel', serif;
-      font-size: 0.6rem; letter-spacing: 0.4em;
-      color: var(--gold); margin-bottom: 0.8rem;
+      font-family: 'Cinzel', serif; font-size: 0.6rem;
+      letter-spacing: 0.4em; color: var(--gold); margin-bottom: 0.8rem;
     }
     .upcoming-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2.2rem, 5vw, 3.8rem);
-      font-weight: 600; color: var(--green);
-      line-height: 1.05; margin-bottom: 0.5rem;
+      font-weight: 600; color: var(--green); line-height: 1.05; margin-bottom: 0.5rem;
     }
     .upcoming-dates {
-      font-family: 'Cinzel', serif;
-      font-size: 0.75rem; letter-spacing: 0.25em;
-      color: var(--gold); margin-bottom: 1.5rem;
+      font-family: 'Cinzel', serif; font-size: 0.75rem;
+      letter-spacing: 0.25em; color: var(--gold); margin-bottom: 1.5rem;
     }
     .upcoming-desc {
       font-size: 1rem; color: var(--text-muted);
       max-width: 540px; margin: 0 auto 2.5rem; line-height: 1.8;
     }
     .upcoming-venue {
-      margin-top: 2rem;
-      font-family: 'Cinzel', serif;
+      margin-top: 2rem; font-family: 'Cinzel', serif;
       font-size: 0.58rem; letter-spacing: 0.3em; color: var(--text-muted);
     }
 
-    /* ── PAST SHOWS ── */
-    #past-shows { background: var(--sand); }
-    .past-shows-grid {
-      max-width: 1100px; margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-    .show-card {
-      background: var(--white);
-      border: 1px solid rgba(183,154,95,0.3);
-      overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .show-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(26,59,41,0.12);
-    }
-    /* SHOW PHOTOS — update each src to images/your-photo.jpg */
-    .show-photo {
-      width: 100%;
-      aspect-ratio: 16 / 10;
-      object-fit: cover;
-      display: block;
-      background: var(--sand-dark);
-    }
-    .show-info { padding: 1.5rem 1.8rem 2rem; }
-    .show-genre-tag {
-      font-family: 'Cinzel', serif;
-      font-size: 0.55rem; letter-spacing: 0.3em;
-      color: var(--gold); margin-bottom: 0.5rem;
-    }
-    .show-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem; font-weight: 600;
-      color: var(--green); line-height: 1.15; margin-bottom: 0.3rem;
-    }
-    .show-dates-small { font-size: 0.82rem; color: var(--text-muted); }
-
     /* ── GET INVOLVED ── */
     #get-involved { background: var(--green); text-align: center; }
-    #get-involved .section-label { color: var(--gold-light); }
-    #get-involved .section-title { color: var(--sand-light); }
+    #get-involved .section-label  { color: var(--gold-light); }
+    #get-involved .section-title  { color: var(--sand-light); }
     #get-involved .section-title em { color: var(--gold-light); }
-    #get-involved .gold-rule { background: var(--gold); }
+    #get-involved .gold-rule      { background: var(--gold); }
     .involved-body {
       max-width: 620px; margin: 0 auto 2.5rem;
-      font-size: 1.05rem; line-height: 1.85;
-      color: rgba(229,206,156,0.8);
+      font-size: 1.05rem; line-height: 1.85; color: rgba(229,206,156,0.8);
     }
     .involved-body em { color: var(--sand-light); font-style: italic; }
     .involved-options {
@@ -335,17 +219,15 @@
       gap: 1.2rem; flex-wrap: wrap; margin-bottom: 2.5rem;
     }
     .involved-chip {
-      font-family: 'Cinzel', serif;
-      font-size: 0.6rem; letter-spacing: 0.2em;
-      color: var(--sand); border: 1px solid var(--gold);
-      padding: 0.45rem 1.1rem;
+      font-family: 'Cinzel', serif; font-size: 0.6rem;
+      letter-spacing: 0.2em; color: var(--sand);
+      border: 1px solid var(--gold); padding: 0.45rem 1.1rem;
     }
     .btn-gold {
-      font-family: 'Cinzel', serif;
-      font-size: 0.7rem; letter-spacing: 0.18em;
-      color: var(--green); background: var(--gold);
-      padding: 0.9rem 2.4rem; text-decoration: none;
-      display: inline-block; transition: background 0.2s, transform 0.15s;
+      font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.18em;
+      color: var(--green); background: var(--gold); padding: 0.9rem 2.4rem;
+      text-decoration: none; display: inline-block;
+      transition: background 0.2s, transform 0.15s;
     }
     .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
 
@@ -362,19 +244,15 @@
     }
     .about-text p:last-child { margin-bottom: 0; }
     .about-text strong { color: var(--green); font-weight: 700; }
-    .mission-pull {
-      border-left: 3px solid var(--gold);
-      padding-left: 2.2rem;
-    }
+    .mission-pull { border-left: 3px solid var(--gold); padding-left: 2.2rem; }
     .mission-pull blockquote {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.3rem; font-weight: 300; font-style: italic;
       line-height: 1.7; color: var(--green); margin-bottom: 1.2rem;
     }
     .mission-pull cite {
-      font-family: 'Cinzel', serif;
-      font-size: 0.58rem; letter-spacing: 0.3em;
-      color: var(--gold); font-style: normal;
+      font-family: 'Cinzel', serif; font-size: 0.58rem;
+      letter-spacing: 0.3em; color: var(--gold); font-style: normal;
     }
 
     /* ── CONTACT ── */
@@ -384,21 +262,15 @@
       display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
     }
     .contact-block h3 {
-      font-family: 'Cinzel', serif;
-      font-size: 0.65rem; letter-spacing: 0.32em;
-      color: var(--gold); margin-bottom: 1.8rem;
-      padding-bottom: 0.8rem;
+      font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.32em;
+      color: var(--gold); margin-bottom: 1.8rem; padding-bottom: 0.8rem;
       border-bottom: 1px solid var(--sand-dark);
     }
-    .contact-item {
-      display: flex; align-items: flex-start;
-      gap: 0.9rem; margin-bottom: 1.4rem;
-    }
+    .contact-item { display: flex; align-items: flex-start; gap: 0.9rem; margin-bottom: 1.4rem; }
     .c-icon { width: 18px; flex-shrink: 0; margin-top: 3px; color: var(--gold); }
     .contact-item-label {
-      font-family: 'Cinzel', serif;
-      font-size: 0.52rem; letter-spacing: 0.25em;
-      color: var(--text-muted); margin-bottom: 0.2rem;
+      font-family: 'Cinzel', serif; font-size: 0.52rem;
+      letter-spacing: 0.25em; color: var(--text-muted); margin-bottom: 0.2rem;
     }
     .contact-item p,
     .contact-item a {
@@ -409,24 +281,20 @@
 
     /* ── FOOTER ── */
     footer {
-      background: var(--green);
-      padding: 2.5rem 2rem;
-      text-align: center;
-      border-top: 2px solid var(--gold);
+      background: var(--green); padding: 2.5rem 2rem;
+      text-align: center; border-top: 2px solid var(--gold);
     }
     .footer-tagline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem; font-style: italic; font-weight: 300;
+      font-family: 'Cormorant Garamond', serif; font-size: 1rem;
+      font-style: italic; font-weight: 300;
       color: rgba(229,206,156,0.65); margin-bottom: 1rem;
     }
     .footer-links {
-      display: flex; justify-content: center;
-      gap: 2rem; flex-wrap: wrap;
-      list-style: none; margin-bottom: 1.5rem;
+      display: flex; justify-content: center; gap: 2rem;
+      flex-wrap: wrap; list-style: none; margin-bottom: 1.5rem;
     }
     .footer-links a {
-      font-family: 'Cinzel', serif;
-      font-size: 0.58rem; letter-spacing: 0.2em;
+      font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.2em;
       color: rgba(229,206,156,0.55); text-decoration: none; transition: color 0.2s;
     }
     .footer-links a:hover { color: var(--gold-light); }
@@ -445,18 +313,14 @@
 
 <!-- NAV -->
 <nav>
-  <a class="nav-logo" href="#hero">
-    <!--
-      NAV LOGO
-      Place your logo file at: images/pharos-logo.png
-      Adjust height in .nav-logo img CSS if needed (currently 40px)
-    -->
+  <a class="nav-logo" href="index.html">
+    <!-- Logo: images/pharos-logo.png — adjust height in .nav-logo img if needed -->
     <img src="images/pharos-logo.png" alt="Pharos Theater" />
     <span class="nav-logo-text">PHAROS THEATER</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#upcoming">Shows</a></li>
-    <li><a href="#past-shows">Past Shows</a></li>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="productions.html">Productions</a></li>
     <li><a href="#get-involved">Get Involved</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -467,12 +331,7 @@
 
 <!-- HERO -->
 <section id="hero">
-  <!--
-    HERO LOGO
-    Same file: images/pharos-logo.png
-    Width is set to 260px in CSS — adjust .hero-logo width if needed.
-    A version with a transparent background works best on the sandy color.
-  -->
+  <!-- Logo: images/pharos-logo.png — adjust .hero-logo width in CSS if needed (currently 280px) -->
   <img class="hero-logo" src="images/pharos-logo.png" alt="Pharos Theater" />
   <p class="hero-tagline">Letting our light shine</p>
   <p class="hero-location">Liberty, South Carolina &nbsp;·&nbsp; Pickens County Performing Arts Center</p>
@@ -496,61 +355,14 @@
   <div class="upcoming-card">
     <!-- PLACEHOLDER: e.g. "Fall 2025" -->
     <p class="upcoming-season">SEASON — PLACEHOLDER</p>
-    <!-- PLACEHOLDER: your show's title -->
+    <!-- PLACEHOLDER: your show title -->
     <h3 class="upcoming-title">Show Title — Placeholder</h3>
     <!-- PLACEHOLDER: e.g. "October 10–12, 2025" -->
     <p class="upcoming-dates">DATES — PLACEHOLDER</p>
-    <!-- PLACEHOLDER: 2–3 sentence description of the show -->
-    <p class="upcoming-desc">
-      A short description of the show goes here. What's it about, who's it for, what's the mood? Two or three sentences is plenty — keep it warm and inviting.
-    </p>
+    <!-- PLACEHOLDER: 2–3 sentence description -->
+    <p class="upcoming-desc">A short description of the show goes here. What's it about, who's it for, what's the mood? Two or three sentences is plenty.</p>
     <a class="btn-primary" href="https://pickenstheater.com" target="_blank" rel="noopener">GET TICKETS AT PICKENSTHEATER.COM</a>
     <p class="upcoming-venue">Pickens County Performing Arts Center &nbsp;·&nbsp; 314 West Main Street, Liberty SC 29657</p>
-  </div>
-</section>
-
-<hr class="section-divider" />
-
-<!-- PAST SHOWS -->
-<section id="past-shows">
-  <p class="section-label">Our History</p>
-  <h2 class="section-title">Past <em>Productions</em></h2>
-  <div class="gold-rule"></div>
-  <div class="past-shows-grid">
-
-    <!--
-      SHOW CARD — duplicate this block to add more shows.
-      Replace: src with your photo (images/show1.jpg, etc.)
-               genre, title, and dates below.
-      Recommended photo size: 800×500px.
-    -->
-    <div class="show-card">
-      <img class="show-photo" src="images/show1.jpg" alt="Production photo" />
-      <div class="show-info">
-        <p class="show-genre-tag">MYSTERY / DRAMA</p>
-        <p class="show-name">Show Title</p>
-        <p class="show-dates-small">October 9–11, 2024</p>
-      </div>
-    </div>
-
-    <div class="show-card">
-      <img class="show-photo" src="images/show2.jpg" alt="Production photo" />
-      <div class="show-info">
-        <p class="show-genre-tag">GENRE</p>
-        <p class="show-name">Show Title</p>
-        <p class="show-dates-small">Dates</p>
-      </div>
-    </div>
-
-    <div class="show-card">
-      <img class="show-photo" src="images/show3.jpg" alt="Production photo" />
-      <div class="show-info">
-        <p class="show-genre-tag">GENRE</p>
-        <p class="show-name">Show Title</p>
-        <p class="show-dates-small">Dates</p>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -603,7 +415,6 @@
   <h2 class="section-title">Get in <em>Touch</em></h2>
   <div class="gold-rule"></div>
   <div class="contact-grid">
-
     <div class="contact-block">
       <h3>LOCATIONS</h3>
       <div class="contact-item">
@@ -627,7 +438,6 @@
         </div>
       </div>
     </div>
-
     <div class="contact-block">
       <h3>REACH US</h3>
       <div class="contact-item">
@@ -660,7 +470,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -668,8 +477,8 @@
 <footer>
   <p class="footer-tagline">Letting our light shine — Liberty, SC</p>
   <ul class="footer-links">
-    <li><a href="#upcoming">Shows</a></li>
-    <li><a href="#past-shows">Past Shows</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="productions.html">Productions</a></li>
     <li><a href="#get-involved">Get Involved</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
