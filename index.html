@@ -1,27 +1,8 @@
 <!DOCTYPE html>
 <!--
-  ╔══════════════════════════════════════════════════════════════╗
-  ║  PHAROS THEATER — index.html (Homepage)                     ║
-  ║                                                              ║
-  ║  LOGO: create an images/ folder next to this file and add   ║
-  ║  pharos-logo.png (transparent background recommended)       ║
-  ║                                                              ║
-  ║  UPCOMING SHOW: search "PLACEHOLDER" to find the 4 spots    ║
-  ║                                                              ║
-  ║  GITHUB + CUSTOM DOMAIN (pharostheater.org):                ║
-  ║  1. Create a new repo just for Pharos (separate from your   ║
-  ║     personal site repo)                                      ║
-  ║  2. Push this folder to that repo                            ║
-  ║  3. Repo Settings → Pages → deploy from main branch         ║
-  ║  4. In Pages settings enter: pharostheater.org               ║
-  ║  5. In Squarespace DNS settings add:                         ║
-  ║       A     @    185.199.108.153                            ║
-  ║       A     @    185.199.109.153                            ║
-  ║       A     @    185.199.110.153                            ║
-  ║       A     @    185.199.111.153                            ║
-  ║       CNAME www  yourgithubusername.github.io               ║
-  ║  6. Back in GitHub Pages tick "Enforce HTTPS"               ║
-  ╚══════════════════════════════════════════════════════════════╝
+  PHAROS THEATER — index.html
+  UPCOMING SHOW: search PLACEHOLDER to find the 4 spots to fill in
+  LOGO: images/pharos-logo.png
 -->
 <html lang="en">
 <head>
@@ -42,7 +23,7 @@
       --gold:       #b79a5f;
       --gold-light: #cdb882;
       --white:      #fdfaf3;
-      --text-muted: #4d6e59;
+      --text-muted: #1a3b29;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -52,19 +33,20 @@
       color: var(--green);
       font-family: 'Lato', sans-serif;
       font-weight: 300;
-      line-height: 1.7;
+      line-height: 1.8;
+      font-size: 18px;
     }
 
     /* ── UTILITIES ── */
     .gold-rule { width: 56px; height: 2px; background: var(--gold); margin: 0 auto 2.5rem; }
     .section-label {
       font-family: 'Cinzel', serif;
-      font-size: 0.6rem; letter-spacing: 0.45em;
+      font-size: 0.75rem; letter-spacing: 0.45em;
       color: var(--gold); text-align: center; margin-bottom: 0.6rem;
     }
     .section-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
       font-weight: 300; text-align: center;
       color: var(--green); margin-bottom: 0.8rem; line-height: 1.1;
     }
@@ -84,25 +66,23 @@
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--gold);
     }
-    .nav-logo {
-      display: flex; align-items: center; gap: 0.75rem; text-decoration: none;
-    }
-    .nav-logo img { height: 40px; width: auto; display: block; }
+    .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .nav-logo img { height: 44px; width: auto; display: block; }
     .nav-logo-text {
-      font-family: 'Cinzel', serif; font-size: 0.95rem;
+      font-family: 'Cinzel', serif; font-size: 1.05rem;
       letter-spacing: 0.2em; color: var(--green); font-weight: 600;
     }
     .nav-links { display: flex; gap: 2.2rem; list-style: none; }
     .nav-links a {
-      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      font-family: 'Cinzel', serif; font-size: 0.75rem;
       letter-spacing: 0.2em; color: var(--green); text-decoration: none;
       opacity: 0.75; transition: opacity 0.2s, color 0.2s;
     }
     .nav-links a:hover, .nav-links a.active { opacity: 1; color: var(--gold); }
     .btn-tickets {
-      font-family: 'Cinzel', serif; font-size: 0.65rem;
+      font-family: 'Cinzel', serif; font-size: 0.75rem;
       letter-spacing: 0.18em; color: var(--white); background: var(--green);
-      padding: 0.6rem 1.5rem; text-decoration: none; transition: background 0.2s;
+      padding: 0.65rem 1.6rem; text-decoration: none; transition: background 0.2s;
     }
     .btn-tickets:hover { background: var(--green-mid); }
 
@@ -119,19 +99,19 @@
       pointer-events: none;
     }
     .hero-logo {
-      width: 280px; max-width: 80vw; height: auto;
+      width: 300px; max-width: 80vw; height: auto;
       margin-bottom: 2rem;
       opacity: 0; animation: fadeUp 0.9s ease forwards;
     }
     .hero-tagline {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
       font-weight: 300; font-style: italic; color: var(--green);
       margin-bottom: 0.6rem;
       opacity: 0; animation: fadeUp 0.9s 0.25s forwards;
     }
     .hero-location {
-      font-family: 'Cinzel', serif; font-size: 0.8rem;
+      font-family: 'Cinzel', serif; font-size: 0.78rem;
       letter-spacing: 0.4em; color: var(--green); margin-bottom: 2.5rem;
       opacity: 0; animation: fadeUp 0.9s 0.45s forwards;
     }
@@ -140,15 +120,15 @@
       opacity: 0; animation: fadeUp 0.9s 0.6s forwards;
     }
     .btn-primary {
-      font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.18em;
-      color: var(--white); background: var(--green); padding: 0.85rem 2.2rem;
+      font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.18em;
+      color: var(--white); background: var(--green); padding: 0.95rem 2.4rem;
       text-decoration: none; transition: background 0.2s, transform 0.15s; display: inline-block;
     }
     .btn-primary:hover { background: var(--green-mid); transform: translateY(-2px); }
     .btn-outline {
-      font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.18em;
+      font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.18em;
       color: var(--green); background: transparent; border: 1.5px solid var(--green);
-      padding: 0.85rem 2.2rem; text-decoration: none;
+      padding: 0.95rem 2.4rem; text-decoration: none;
       transition: background 0.2s, transform 0.15s; display: inline-block;
     }
     .btn-outline:hover { background: rgba(26,59,41,0.08); transform: translateY(-2px); }
@@ -158,8 +138,8 @@
       opacity: 0; animation: fadeIn 1s 1.2s forwards;
     }
     .hero-scroll span {
-      font-family: 'Cinzel', serif; font-size: 0.5rem;
-      letter-spacing: 0.35em; color: var(--text-muted);
+      font-family: 'Cinzel', serif; font-size: 0.6rem;
+      letter-spacing: 0.35em; color: var(--green);
     }
     .scroll-line {
       width: 1px; height: 36px;
@@ -182,25 +162,25 @@
       padding: 3.5rem; text-align: center;
     }
     .upcoming-season {
-      font-family: 'Cinzel', serif; font-size: 0.6rem;
+      font-family: 'Cinzel', serif; font-size: 0.75rem;
       letter-spacing: 0.4em; color: var(--gold); margin-bottom: 0.8rem;
     }
     .upcoming-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-size: clamp(2.4rem, 5vw, 4rem);
       font-weight: 600; color: var(--green); line-height: 1.05; margin-bottom: 0.5rem;
     }
     .upcoming-dates {
-      font-family: 'Cinzel', serif; font-size: 0.75rem;
+      font-family: 'Cinzel', serif; font-size: 0.85rem;
       letter-spacing: 0.25em; color: var(--gold); margin-bottom: 1.5rem;
     }
     .upcoming-desc {
-      font-size: 1rem; color: var(--text-muted);
-      max-width: 540px; margin: 0 auto 2.5rem; line-height: 1.8;
+      font-size: 1.1rem; color: var(--green);
+      max-width: 540px; margin: 0 auto 2.5rem; line-height: 1.9;
     }
     .upcoming-venue {
       margin-top: 2rem; font-family: 'Cinzel', serif;
-      font-size: 0.58rem; letter-spacing: 0.3em; color: var(--text-muted);
+      font-size: 0.68rem; letter-spacing: 0.3em; color: var(--green);
     }
 
     /* ── GET INVOLVED ── */
@@ -211,7 +191,7 @@
     #get-involved .gold-rule      { background: var(--gold); }
     .involved-body {
       max-width: 620px; margin: 0 auto 2.5rem;
-      font-size: 1.05rem; line-height: 1.85; color: rgba(229,206,156,0.8);
+      font-size: 1.15rem; line-height: 1.9; color: rgba(229,206,156,0.9);
     }
     .involved-body em { color: var(--sand-light); font-style: italic; }
     .involved-options {
@@ -219,13 +199,13 @@
       gap: 1.2rem; flex-wrap: wrap; margin-bottom: 2.5rem;
     }
     .involved-chip {
-      font-family: 'Cinzel', serif; font-size: 0.6rem;
+      font-family: 'Cinzel', serif; font-size: 0.7rem;
       letter-spacing: 0.2em; color: var(--sand);
-      border: 1px solid var(--gold); padding: 0.45rem 1.1rem;
+      border: 1px solid var(--gold); padding: 0.5rem 1.2rem;
     }
     .btn-gold {
-      font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.18em;
-      color: var(--green); background: var(--gold); padding: 0.9rem 2.4rem;
+      font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.18em;
+      color: var(--green); background: var(--gold); padding: 1rem 2.6rem;
       text-decoration: none; display: inline-block;
       transition: background 0.2s, transform 0.15s;
     }
@@ -239,45 +219,45 @@
       gap: 5rem; align-items: start;
     }
     .about-text p {
-      font-size: 1rem; line-height: 1.9;
-      color: var(--text-muted); margin-bottom: 1.3rem;
+      font-size: 1.1rem; line-height: 1.9;
+      color: var(--green); margin-bottom: 1.3rem;
     }
     .about-text p:last-child { margin-bottom: 0; }
     .about-text strong { color: var(--green); font-weight: 700; }
     .mission-pull { border-left: 3px solid var(--gold); padding-left: 2.2rem; }
     .mission-pull blockquote {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem; font-weight: 300; font-style: italic;
+      font-size: 1.4rem; font-weight: 300; font-style: italic;
       line-height: 1.7; color: var(--green); margin-bottom: 1.2rem;
     }
     .mission-pull cite {
-      font-family: 'Cinzel', serif; font-size: 0.58rem;
+      font-family: 'Cinzel', serif; font-size: 0.68rem;
       letter-spacing: 0.3em; color: var(--gold); font-style: normal;
     }
 
     /* ── CONTACT ── */
     #contact { background: var(--sand); }
     .contact-grid {
-      max-width: 900px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+      max-width: 700px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr; gap: 2rem;
     }
     .contact-block h3 {
-      font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.32em;
+      font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 0.32em;
       color: var(--gold); margin-bottom: 1.8rem; padding-bottom: 0.8rem;
       border-bottom: 1px solid var(--sand-dark);
     }
     .contact-item { display: flex; align-items: flex-start; gap: 0.9rem; margin-bottom: 1.4rem; }
-    .c-icon { width: 18px; flex-shrink: 0; margin-top: 3px; color: var(--gold); }
+    .c-icon { width: 20px; flex-shrink: 0; margin-top: 3px; color: var(--gold); }
     .contact-item-label {
-      font-family: 'Cinzel', serif; font-size: 0.52rem;
-      letter-spacing: 0.25em; color: var(--text-muted); margin-bottom: 0.2rem;
+      font-family: 'Cinzel', serif; font-size: 0.62rem;
+      letter-spacing: 0.25em; color: var(--green); margin-bottom: 0.2rem;
     }
     .contact-item p,
     .contact-item a {
-      font-size: 0.95rem; color: var(--text-muted);
+      font-size: 1.05rem; color: var(--green);
       text-decoration: none; line-height: 1.6; transition: color 0.2s;
     }
-    .contact-item a:hover { color: var(--green); }
+    .contact-item a:hover { color: var(--gold); }
 
     /* ── FOOTER ── */
     footer {
@@ -285,7 +265,7 @@
       text-align: center; border-top: 2px solid var(--gold);
     }
     .footer-tagline {
-      font-family: 'Cormorant Garamond', serif; font-size: 1rem;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.1rem;
       font-style: italic; font-weight: 300;
       color: rgba(229,206,156,0.65); margin-bottom: 1rem;
     }
@@ -294,17 +274,17 @@
       flex-wrap: wrap; list-style: none; margin-bottom: 1.5rem;
     }
     .footer-links a {
-      font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.2em;
+      font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.2em;
       color: rgba(229,206,156,0.55); text-decoration: none; transition: color 0.2s;
     }
     .footer-links a:hover { color: var(--gold-light); }
-    .footer-copy { font-size: 0.75rem; color: rgba(229,206,156,0.3); }
+    .footer-copy { font-size: 0.85rem; color: rgba(229,206,156,0.3); }
 
     /* ── MOBILE ── */
     @media (max-width: 720px) {
       nav { padding: 0.9rem 1.4rem; }
       .nav-links { display: none; }
-      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .upcoming-card { padding: 2rem 1.4rem; }
     }
   </style>
@@ -314,7 +294,6 @@
 <!-- NAV -->
 <nav>
   <a class="nav-logo" href="index.html">
-    <!-- Logo: images/pharos-logo.png — adjust height in .nav-logo img if needed -->
     <img src="images/pharos-logo.png" alt="Pharos Theater" />
     <span class="nav-logo-text">PHAROS THEATER</span>
   </a>
@@ -328,10 +307,8 @@
   <a class="btn-tickets" href="https://pickenstheater.com" target="_blank" rel="noopener">GET TICKETS</a>
 </nav>
 
-
 <!-- HERO -->
 <section id="hero">
-  <!-- Logo: images/pharos-logo.png — adjust .hero-logo width in CSS if needed (currently 280px) -->
   <img class="hero-logo" src="images/pharos-logo.png" alt="Pharos Theater" />
   <p class="hero-tagline">Letting our light shine</p>
   <p class="hero-location">Liberty, South Carolina &nbsp;·&nbsp; Pickens County Performing Arts Center</p>
@@ -416,7 +393,7 @@
   <div class="gold-rule"></div>
   <div class="contact-grid">
     <div class="contact-block">
-      <h3>LOCATIONS</h3>
+      <h3>REACH US</h3>
       <div class="contact-item">
         <svg class="c-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
@@ -426,20 +403,6 @@
           <p class="contact-item-label">PERFORMANCE VENUE</p>
           <p>Pickens County Performing Arts Center<br/>314 West Main Street<br/>Liberty, SC 29657</p>
         </div>
-      </div>
-      <div class="contact-item">
-        <svg class="c-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
-          <polyline points="9 22 9 12 15 12 15 22"/>
-        </svg>
-      </div>
-    </div>
-    <div class="contact-block">
-      <h3>REACH US</h3>
-      <div class="contact-item">
-        <svg class="c-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 010.07 1.18 2 2 0 012.09 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.16 6.16l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
-        </svg>
       </div>
       <div class="contact-item">
         <svg class="c-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
